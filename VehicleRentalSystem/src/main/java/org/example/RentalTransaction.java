@@ -4,26 +4,18 @@ import java.time.LocalDate;
 public class RentalTransaction {
 
     private Customer customer;
-    private Vehicle vehicle;
     private int rentalDays;
+    private Vehicle vehicle;
     private double rentalCost;
     private LocalDate startDate;
     private LocalDate endDate;
 
     public RentalTransaction(Customer customer, Vehicle vehicle, int rentalDays, double rentalCost) {
         this.customer = customer;
-        this.vehicle = vehicle;
         this.rentalDays = rentalDays;
         this.rentalCost = rentalCost;
         this.startDate = LocalDate.now();
         this.endDate = startDate.plusDays(rentalDays);
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
@@ -67,5 +59,11 @@ public class RentalTransaction {
         this.customer = customer;
     }
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
 }
